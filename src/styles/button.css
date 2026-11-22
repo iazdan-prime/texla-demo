@@ -1,0 +1,18 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  height: 44px;
+  padding: 0 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(229, 197, 104, 0.6);
+  background: linear-gradient(135deg, rgba(229, 197, 104, 0.32), rgba(229, 197, 104, 0.06));
+  color: var(--fg);
+  font-size: 13px;
+  transition: background var(--hover-duration) var(--hover-ease),
+              border-color var(--hover-duration) var(--hover-ease);
+}
+.btn:hover {
+  border-color: var(--gold);
+  background: linear-gradient(135deg, rgba(229, 197, 104, 0.45), rgba(229, 197, 104, 0.12));
+}
