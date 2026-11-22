@@ -1,0 +1,31 @@
+:root {
+  /* colors */
+  --bg: #0b0d10;
+  --fg: #f4f0e7;
+  --card: #15191f;
+  --muted: #b9bdc5;
+  --body-text: #c8cdd0;
+  --border: #34383f;
+  --gold: #e5c568;
+  --gold-soft: #edcb83;
+  --red: #cd171f;
+
+  /* type */
+  --sans: "Manrope", Arial, sans-serif;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --fs-hero: 6.5vw;
+  --fs-story: 5.7vw;
+  --fs-body: 16.3px;
+  --fs-note: 27px;
+  --fs-label: 10px;
+  --tracking-display: -0.025em;
+
+  /* layout */
+  --radius: 1.125rem;
+  --gutter: clamp(24px, 5vw, 88px);
+  --header-h: 94px;
+
+  /* motion (hover only; GSAP timing is set in code) */
+  --hover-duration: 0.15s;
+  --hover-ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
