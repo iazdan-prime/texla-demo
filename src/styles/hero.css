@@ -45,7 +45,7 @@
   letter-spacing: var(--tracking-display);
   color: var(--gold-soft);
 }
-.hero__title span { display: block; }
+.hero__title > span { display: block; }
 
 .hero__lead {
   margin-top: 6px;
@@ -87,3 +87,5 @@
   line-height: 1.7;
   font-size: 13px;
 }
+
+.word { display: inline-block; }
