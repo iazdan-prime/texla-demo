@@ -60,7 +60,7 @@
   height: 1px;
   width: calc(var(--gutter) + 120px);
   margin: 28px 0 0 calc(var(--gutter) * -1);
-  background: linear-gradient(to right, rgba(229, 197, 104, 0.7), rgba(229, 197, 104, 0));
+  background: linear-gradient(to right, rgba(var(--accent-rgb), 0.7), rgba(var(--accent-rgb), 0));
 }
 
 .hero__actions { display: flex; align-items: center; gap: 36px; margin-top: 28px; }
@@ -72,14 +72,14 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid rgba(229, 197, 104, 0.6);
+  border: 1px solid rgba(var(--accent-rgb), 0.6);
 }
 
 .hero__hint { position: absolute; z-index: 2; bottom: 40px; font-size: 12px; }
 .hero__hint--left {
   left: var(--gutter);
   padding-left: 16px;
-  border-left: 1px solid rgba(229, 197, 104, 0.7);
+  border-left: 1px solid rgba(var(--accent-rgb), 0.7);
 }
 .hero__hint--right {
   right: var(--gutter);

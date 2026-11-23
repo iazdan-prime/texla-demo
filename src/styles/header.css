@@ -39,8 +39,8 @@
   transition: border-color var(--hover-duration) var(--hover-ease);
 }
 .header__link--active {
-  border-color: rgba(229, 197, 104, 0.55);
-  background: rgba(229, 197, 104, 0.12);
+  border-color: rgba(var(--accent-rgb), 0.55);
+  background: rgba(var(--accent-rgb), 0.12);
 }
 .header__actions { display: flex; align-items: center; gap: 12px; }
 .icon-btn {
@@ -49,6 +49,6 @@
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  border: 1px solid rgba(229, 197, 104, 0.45);
-  background: rgba(229, 197, 104, 0.08);
+  border: 1px solid rgba(var(--accent-rgb), 0.45);
+  background: rgba(var(--accent-rgb), 0.08);
 }
