@@ -22,10 +22,8 @@ export default function Hero() {
         scrollTrigger: {
           trigger: root.current,
           start: 'top top',
-          end: '+=150%',      // pinned for 1.5 window heights of scrolling
-          pin: true,
+          end: 'bottom bottom',
           scrub: 0.5,
-          anticipatePin: 1,
         },
       })
 
@@ -58,7 +56,8 @@ export default function Hero() {
   )
 
   return (
-    <Chapter id="hero" className="hero" innerRef={root}>
+    <div className="track track--hero" ref={root}>
+      <Chapter id="hero" className="hero">
       <div className="hero__bg">
         <img className="hero__img" src={heroImg} alt="" />
       </div>
@@ -97,6 +96,7 @@ export default function Hero() {
       <p className="hero__hint hero__hint--right">
         2 chapters.<br />One connected world.
       </p>
-    </Chapter>
+      </Chapter> 
+    </div>
   )
 }

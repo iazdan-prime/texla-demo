@@ -3,3 +3,13 @@
   min-height: 100vh;
   overflow: hidden;
 }
+
+.track--hero { height: 250vh; }
+.track--story { height: 200vh; }
+
+.chapter.hero,
+.chapter.story {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}

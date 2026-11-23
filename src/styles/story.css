@@ -75,3 +75,10 @@
   line-height: 1.1;
   color: var(--gold-soft);
 }
+
+/* clipped container for the photo and its dark overlay; GSAP grows it to full screen */
+.story__card {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(12% 8% 12% 8% round 18px);
+}

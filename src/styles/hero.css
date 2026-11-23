@@ -1,7 +1,7 @@
 .hero { background: var(--bg); }
 
 .hero__bg { position: absolute; inset: 0; }
-.hero__img { width: 100%; height: 100%; object-fit: cover; }
+.hero__img { width: 100%; height: 100%; object-fit: cover; will-change: transform; }
 
 /* dark gradient so the left-side text stays readable */
 .hero__shade {
