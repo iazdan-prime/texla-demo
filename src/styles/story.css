@@ -38,7 +38,7 @@
   letter-spacing: var(--tracking-display);
   color: var(--gold-soft);
 }
-.story__title span { display: block; }
+.story__title > span { display: block; }
 
 .story__text {
   max-width: 560px;
@@ -81,4 +81,11 @@
   position: absolute;
   inset: 0;
   clip-path: inset(12% 8% 12% 8% round 18px);
+}
+
+.story__content .chapter-label,
+.story__content .word,
+.story__content .btn,
+.story__note {
+  opacity: 0;
 }
