@@ -6,12 +6,14 @@ import Chapter from '../components/Chapter'
 import Button from '../components/Button'
 import Words from '../components/Words'
 import heroImg from '../assets/images/hero.webp'
+import useChapterActive from '../hooks/useChapterActive'
 import '../styles/hero.css'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 export default function Hero() {
   const root = useRef(null)
+  useChapterActive(root, 0)
 
   useGSAP(
     () => {
@@ -56,7 +58,7 @@ export default function Hero() {
   )
 
   return (
-    <div className="track track--hero" ref={root}>
+    <div className="track track--hero" data-chapter="hero" ref={root}>
       <Chapter id="hero" className="hero">
       <div className="hero__bg">
         <img className="hero__img" src={heroImg} alt="" />

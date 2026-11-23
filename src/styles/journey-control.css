@@ -32,3 +32,6 @@
   transition: background var(--hover-duration) var(--hover-ease);
 }
 .journey__btn:hover { background: rgba(var(--accent-rgb), 0.22); }
+
+.journey__btn:disabled { opacity: 0.35; cursor: default; }
+.journey__btn:disabled:hover { background: rgba(var(--accent-rgb), 0.1); }

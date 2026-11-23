@@ -8,6 +8,7 @@ import Button from '../components/Button'
 import Words from '../components/Words'
 import storyImg from '../assets/images/story.webp'
 import '../styles/story.css'
+import useChapterActive from '../hooks/useChapterActive'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
@@ -19,6 +20,7 @@ const notes = [
 
 export default function Story() {
   const root = useRef(null)
+  useChapterActive(root, 1)
 
   useGSAP(
     () => {
@@ -60,7 +62,7 @@ export default function Story() {
   )
 
   return (
-    <div className="track track--story" ref={root}>
+    <div className="track track--story" data-chapter="story" ref={root}>
       <Chapter id="story" className="story">
         <div className="story__stage">
           <div className="story__card">
