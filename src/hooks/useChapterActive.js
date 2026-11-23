@@ -1,8 +1,7 @@
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
-import { useSetActiveChapter } from '../context/JourneyContext'
-
+import { useSetActiveChapter } from '../context/journey'
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 // Marks a chapter as active while its track is in the middle of the window.

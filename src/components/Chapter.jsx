@@ -1,8 +1,8 @@
 import '../styles/chapter.css'
 
-export default function Chapter({ id, className = '', innerRef, children }) {
+export default function Chapter({ id, className = '', children }) {
   return (
-    <section id={id} ref={innerRef} className={`chapter ${className}`}>
+    <section id={id} className={`chapter ${className}`}>
       {children}
     </section>
   )

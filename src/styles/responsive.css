@@ -1,0 +1,25 @@
+/* Simple narrow-window fallback. Desktop is the target; this only stops things breaking. */
+
+@media (max-width: 1100px) {
+  /* header: drop the nav and the second utility group */
+  .header__nav { display: none; }
+  .header__top { white-space: nowrap; }
+  .header__top-group:first-child .header__dot,
+  .header__top-group:first-child span:last-child { display: none; }
+  .header__top-group:last-child span:not(:first-child) { display: none; }
+
+  /* hero: the right-hand hint collides with the pill */
+  .hero__hint--right { display: none; }
+  .hero__lead { font-size: 16px; }
+
+  /* story: side notes would overlap the paragraph */
+  .story__notes { display: none; }
+  .story__text { font-size: 16px; }
+}
+
+@media (max-width: 700px) {
+  .header__actions .btn { display: none; }
+  .hero__hint--left { display: none; }
+  .hero__actions { gap: 20px; }
+  .journey { width: 300px; gap: 24px; }
+}

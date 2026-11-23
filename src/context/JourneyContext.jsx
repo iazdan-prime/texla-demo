@@ -1,12 +1,5 @@
-import { createContext, useContext, useState } from 'react'
-
-export const CHAPTERS = [
-  { id: 'hero', label: 'Arrival' },
-  { id: 'story', label: 'Our story' },
-]
-
-const ActiveContext = createContext(0)
-const SetActiveContext = createContext(() => {})
+import { useState } from 'react'
+import { ActiveContext, SetActiveContext } from './journey'
 
 export function JourneyProvider({ children }) {
   const [active, setActive] = useState(0)
@@ -16,6 +9,3 @@ export function JourneyProvider({ children }) {
     </SetActiveContext.Provider>
   )
 }
-
-export const useActiveChapter = () => useContext(ActiveContext)
-export const useSetActiveChapter = () => useContext(SetActiveContext)

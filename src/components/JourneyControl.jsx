@@ -1,5 +1,5 @@
 import '../styles/journey-control.css'
-import { CHAPTERS, useActiveChapter } from '../context/JourneyContext'
+import { CHAPTERS, useActiveChapter } from '../context/journey'
 
 const pad = (n) => String(n).padStart(2, '0')
 
