@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react'
 
 export const CHAPTERS = [
-  { id: 'hero', label: 'Arrival' },
+  { id: 'hero', label: 'Explore Walton' },
   { id: 'story', label: 'Our story' },
 ]
 

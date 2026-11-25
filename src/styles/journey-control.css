@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 56px;
-  width: 330px;
+  width: max-content;
   height: 66px;
   padding: 0 14px 0 26px;
   border-radius: 999px;
@@ -18,8 +18,13 @@
 .journey__status { display: flex; align-items: baseline; gap: 4px; }
 .journey__num { font-size: 18px; }
 .journey__total { font-size: 10px; color: var(--muted); }
-.journey__label { margin-left: 14px; font-size: 12px; font-weight: 600; }
-
+.journey__label {
+  margin-left: 14px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;   /* keeps the text on one line */
+  min-width: 9.5em;      /* reserves room for "Explore Walton" so the pill doesn't change width */
+}
 .journey__buttons { display: flex; gap: 10px; }
 .journey__btn {
   display: grid;
