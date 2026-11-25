@@ -1,22 +1,31 @@
 .story { background: var(--bg); }
 
+/* --story-center is the horizontal centre line shared by the photo card and the text block */
 .story__stage {
+  --story-center: 50%;
   position: relative;
   height: 100vh;
   overflow: hidden;
 }
 
-.story__media { position: absolute; inset: 0; }
-.story__img { width: 100%; height: 100%; object-fit: cover; }
-
-/* the photo is bright, so darken it to keep the text readable */
-.story__shade {
+/* GSAP animates left, right, border-radius and yPercent (-50 centres it on the line).
+   The start values here must match the "from" values in Story.jsx. */
+.story__card {
+  position: absolute;
+  top: var(--story-center);
+  right: 4.5%;
+  left: 44%;
+  aspect-ratio: 4128 / 2464;   /* same ratio as the photo, so nothing is cropped */
+  overflow: hidden;
+  border: 1px solid rgba(var(--accent-rgb), 0.8);
+  border-radius: 18px;
+}
+.story__img {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(to right, rgba(11, 13, 16, 0.82) 0%, rgba(11, 13, 16, 0.55) 45%, rgba(11, 13, 16, 0.1) 80%),
-    linear-gradient(to top, rgba(11, 13, 16, 0.7) 0%, rgba(11, 13, 16, 0) 40%),
-    rgba(11, 13, 16, 0.4);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .story__content {
@@ -26,11 +35,21 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 48px var(--gutter) 120px;
+  padding: 48px var(--gutter) 0;
+}
+
+/* heading, paragraph and button as one block, centred on the same line as the card */
+.story__body {
+  position: absolute;
+  left: var(--gutter);
+  top: var(--story-center);
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .story__title {
-  margin-top: 56px;
   font-family: var(--serif);
   font-weight: 500;
   font-size: var(--fs-story);
@@ -47,45 +66,10 @@
   line-height: 1.8;
   color: var(--body-text);
 }
-
-.story__notes {
-  position: absolute;
-  z-index: 2;
-  right: var(--gutter);
-  bottom: 150px;
-    max-width: 260px;
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.story__note {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding-left: 28px;
-  border-left: 1px solid rgba(var(--accent-rgb), 0.7);
-}
-.story__note-label { font-size: var(--fs-label); color: var(--fg); }
-.story__note-value {
-  font-family: var(--serif);
-  font-size: var(--fs-note);
-  line-height: 1.1;
-  color: var(--gold-soft);
-}
-
-/* clipped container for the photo and its dark overlay; GSAP grows it to full screen */
-.story__card {
-  position: absolute;
-  inset: 0;
-  clip-path: inset(12% 8% 12% 8% round 18px);
-}
+.story__text > span { display: block; }
 
 .story__content .chapter-label,
 .story__content .word,
-.story__content .btn,
-.story__note {
+.story__content .btn {
   opacity: 0;
 }

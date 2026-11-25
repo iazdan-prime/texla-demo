@@ -11,15 +11,12 @@
   /* hero: the right-hand hint collides with the pill */
   .hero__hint--right { display: none; }
   .hero__lead { font-size: 16px; }
-
-  /* story: side notes would overlap the paragraph */
-  .story__notes { display: none; }
-  .story__text { font-size: 16px; }
+  /* story: keep the paragraph left of the photo card */
+  .story__text { font-size: 16px; max-width: 36vw; }
 }
 
 @media (max-width: 700px) {
   .header__actions .btn { display: none; }
   .hero__hint--left { display: none; }
-  .hero__actions { gap: 20px; }
-  .journey { width: 300px; gap: 24px; }
+  .journey { gap: 24px; }
 }

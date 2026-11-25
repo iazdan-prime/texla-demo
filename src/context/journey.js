@@ -2,7 +2,7 @@ import { createContext, useContext } from 'react'
 
 export const CHAPTERS = [
   { id: 'hero', label: 'Explore Walton' },
-  { id: 'story', label: 'Our story' },
+  { id: 'story', label: 'Our Owners' },
 ]
 
 export const ActiveContext = createContext(0)

@@ -6,17 +6,11 @@ import Chapter from '../components/Chapter'
 import ChapterLabel from '../components/ChapterLabel'
 import Button from '../components/Button'
 import Words from '../components/Words'
-import storyImg from '../assets/images/story.webp'
+import ownersImg from '../assets/images/owners.png'
 import '../styles/story.css'
 import useChapterActive from '../hooks/useChapterActive'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
-
-const notes = [
-  { label: 'Our home', value: 'Dhaka, Bangladesh' },
-  { label: 'Our focus', value: 'Apparel sourcing' },
-  { label: 'Our perspective', value: 'People. Product. Progress.' },
-]
 
 export default function Story() {
   const root = useRef(null)
@@ -34,11 +28,12 @@ export default function Story() {
         },
       })
 
-      // card grows to full screen (first half of the timeline)
+      // card grows a little around its centre line. Height follows the photo's ratio (CSS).
+      // yPercent -50 centres it on the line set by --story-center in story.css.
       tl.fromTo(
         '.story__card',
-        { clipPath: 'inset(12% 8% 12% 8% round 18px)' },
-        { clipPath: 'inset(0% 0% 0% 0% round 0px)', duration: 4 },
+        { left: '44%', right: '4.5%', borderRadius: 18, yPercent: -50 },
+        { left: '41.5%', right: '2%', borderRadius: 0, yPercent: -50, duration: 4 },
         0
       )
 
@@ -55,7 +50,6 @@ export default function Story() {
       fadeIn('.story__content .chapter-label', 1.5)
       fadeIn('.story__title .word', 2, 0.3)
       fadeIn('.story__text .word', 3.4, 0.08)
-      fadeIn('.story__note', 4.2, 0.35)
       fadeIn('.story__content .btn', 5)
     },
     { scope: root }
@@ -66,38 +60,26 @@ export default function Story() {
       <Chapter id="story" className="story">
         <div className="story__stage">
           <div className="story__card">
-            <div className="story__media">
-              <img className="story__img" src={storyImg} alt="" />
-            </div>
-            <div className="story__shade" />
+            <img className="story__img" src={ownersImg} alt="" />
           </div>
 
           <div className="story__content">
-            <ChapterLabel number="02" title="Our story" />
+            <ChapterLabel number="02" title="Our Owners" />
 
-            <h2 className="story__title">
-              <span><Words>Rooted in Bangladesh.</Words></span>
-              <span><Words>Connected</Words></span>
-              <span><Words>to the world.</Words></span>
-            </h2>
+            <div className="story__body">
+              <h2 className="story__title">
+                <span><Words>Our Honorable</Words></span>
+                <span><Words>Owners</Words></span>
+              </h2>
 
-            <p className="story__text">
-              <Words>
-                {"A place of possibility. A culture of craftsmanship. WALTON connects your collection with Bangladesh's apparel manufacturing ecosystem."}
-              </Words>
-            </p>
+              <p className="story__text">
+                <span><Words>Meet the people shaping Walton.</Words></span>
+                <span><Words>{"A shared ambition for Bangladesh's electronics industry."}</Words></span>
+              </p>
 
-            <Button>Our story</Button>
+              <Button>Meet our Owners</Button>
+            </div>
           </div>
-
-          <ul className="story__notes">
-            {notes.map((n) => (
-              <li key={n.label} className="story__note">
-                <span className="story__note-label">{n.label}</span>
-                <span className="story__note-value">{n.value}</span>
-              </li>
-            ))}
-          </ul>
         </div>
       </Chapter>
     </div>
