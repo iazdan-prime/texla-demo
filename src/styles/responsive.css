@@ -12,7 +12,7 @@
   .hero__hint--right { display: none; }
   .hero__lead { font-size: 16px; }
   /* story: keep the paragraph left of the photo card */
-  .story__text { font-size: 16px; max-width: 36vw; }
+  .story__text { font-size: 16px; }
 }
 
 @media (max-width: 700px) {
